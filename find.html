@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Find the Event</title>
+	<link rel="stylesheet" href="style2.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<section class="header">
+	    <ul class="left">
+	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/index.html">Event Planner</a></li>
+	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/find.html">Find an Event</a></li>
+	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/create2.html">Create an Event</a></li>
+	    </ul>
+	    <ul class="right">
+	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/logIn.html">LogIn</a></li>
+	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/signUp.html">SignUp</a></li>
+	    </ul>
+	</section>
+	<div class="indicator" style="left:220px"></div>
+	<section class="main-image">
+		<img src="images/cover.jpg"/>
+		<div>
+			<datalist id="eventlist">
+		      <option value="Art">
+		      <option value="Hiking">
+		      <option value="Tech">
+		      <option value="Health">
+		    </datalist>
+			<input type="text" list="eventlist" name="eventlist" id="type" placeholder="Search your Favourite meetup" autofocus>
+			<span class="clearable">&#9747;</span>
+			Find the meetups in the Bay Area
+		</div>
+	</section>
+	<section class="meetups">
+		
+	</section>
+	<section class="footer">
+		<ul>
+			<li><a href="#">Create an Event</a></li>
+			<li><a href="#">LogIn</a></li>
+			<li><a href="#">SignUp</a></li>
+		</ul>
+		<hr style="width: 900px;">
+		<p>&copy Event Planner 2016</p>
+	</section>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
