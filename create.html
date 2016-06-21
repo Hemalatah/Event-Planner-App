@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create the Event</title>
+	<link rel="stylesheet" href="style2.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="header">
+      <ul class="left">
+        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/index.html">Event Planner</a></li>
+        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/find.html">Find an Event</a></li>
+        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/create2.html">Create an Event</a></li>
+      </ul>
+      <ul class="right">
+        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/logIn.html">LogIn</a></li>
+        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/signUp.html">SignUp</a></li>
+      </ul>
+  </div>
+  <div class="indicator" style="left: 400px"></div>
+  <div class="progress-bar">
+    <div class="text">Event creation progress:</div>
+    <ul>
+      <li id="1"><div>Event</div></li>
+      <li id="2"><div>Host</div></li>
+      <li id="3"><div>Time</div></li>
+      <li id="4"><div>Loc</div></li>
+      <li id="5"><div>Info</div></li>
+    </ul>
+  </div>
+  <section class="step1">
+    <h3>Event Information:</h3><br>
+    <label for="eventName">Name of the Event:<br>
+      <input type="text" name="name" id="eventName" required autofocus>
+    </label>
+    <label for="event">
+    <datalist id="event">
+      <option value="Art">
+      <option value="Hiking">
+      <option value="Tech">
+      <option value="Health">
+    </datalist>
+    Type of the Event:<br>
+    <input type="text" list="event" name="event" id="event" required></label>
+    <button id="next1">Next</button>
+  </section>
+  <section class="step2">
+    <h3 class="green">Info about the Event Host:</h3>
+      <label for="hostName">Name:<br>
+        <input type="text" name="name" id="hostName" required autocomplete="name">
+      </label>
+      <label for="phone">Phone Number:<br>
+        <input type="tel" name="phone" id="phone" required autocomplete="tel">
+      </label>
+      <label for="email">Email Address:<br>
+        <input type="text" name="email" id="email" placeholder="name@example.com" required autocomplete="email">
+      </label>
+      <label for="company">Company Name <span style="color:#555">(optional)</span>:<br>
+        <input type="text" id="optional">
+      </label>
+    <button id="next2">Next</button>
+  </section>
+  <section class="step3">
+    <h3 class="green">Event Timing</h3>
+      <label for="date">Event start Date and Time:<br>
+        <input type="datetime-local" id="date">
+      </label>
+      <label for="date">Event end Date and Time:<br>
+        <input type="datetime-local" id="date">
+      </label>
+    <button id="next3">Next</button>
+  </section>
+  <section class="step4">
+    <h3 class="green">Location</h3>
+      <label for="address">Address <br> Line 1:<br>
+        <input type="text" name="address" id="address" required autocomplete="address-line1">
+      </label>
+      <label for="address2">Line 2 (optional):<br>
+        <input type="text" name="address" id="optional" required autocomplete="address-line2">
+      </label>
+      <label for="city">City:<br>
+        <input type="text" name="city" id="city" required autocomplete="city">
+      </label>
+      <label for="state">State/Province:<br>
+        <input type="text" name="state" id="state" required autocomplete="address-level2">
+      </label>
+      <label for="zip">Zip Code:<br>
+        <input type="text" name="zip" id="zip" required autocomplete="postal-code">
+      </label>
+      <label for="country">Country:<br>
+        <input type="text" name="country" id="country" required autocomplete="country">
+      </label>
+    <button id="next4">Next</button>
+  </section>
+  <section class="step5">
+    <h3 class="green">Description about the Event:</h3>
+    <textarea id="textArea" rows="10" cols="80" placeholder="Few words about the Event..."></textarea>
+    <br><br>
+    <div id="create">
+      <button onclick="checkMove();" id="create" type="text">Create an Event</button>
+    </div>
+  </section>
+</div>
+</body>
+<script>
+    var count=1, val;
+    $('#' + count).css('border', '2px solid #02B3E4');
+    $('#' + count + '  div').css('color', '#02B3E4');
+    function next(i) {  
+      $('#' + count).css('border', '2px solid #999');
+      $('#' + count + '  div').css('color', '#fff');
+      count = i + 1;
+      $('#' + count).css('border', '2px solid #02B3E4');
+      $('#' + count + '  div').css('color', '#02B3E4');
+      $('.step' + count).css('display', 'block');
+      $('html,body').animate({
+        scrollTop: $('.step' + count).offset().top},
+        'slow');
+      return;   
+    }
+
+    function validate(focus,value) {
+      var filter;
+      switch(focus) {
+        case "hostName":
+          if(value.length < 3) {
+            alert('Please enter a name 3 characters or more.');
+          }
+          break;
+        case "phone":  
+          filter = /[0-9 -()+]+$/;
+          if (value.length < 6 || (!filter.test(value))) {
+            alert('Please enter a valid phone number.');
+          }
+          break;
+        case "email":
+          filter = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
+          if(!filter.test(value)) {
+            alert('Please enter a valid email address.');
+          }
+          break;
+        case "optional":
+          break;
+        default:
+          if(value == '') {
+            alert('Please fill out this field');
+          }
+          break;
+      }
+      return false;
+    }
+
+    $('input').focusout(function() {
+      var value = $(this).val();
+      var focus = $(this).attr('id');
+      validate(focus,value);
+    });
+    
+
+    $('button').click(function() {
+      val = $(this).attr('id');
+      if(val !== 'create') {
+        val = val.slice(-1);
+        $('#' + val).css('background', '#02B3E4');
+        next(parseInt(val));
+      }
+      else {
+        return;
+      }
+    });
+
+
+    
+    
+    
+  
+</script>
+</html>
