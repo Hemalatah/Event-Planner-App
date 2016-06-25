@@ -4,7 +4,7 @@
 	padding: 20px;
 	margin: 0 auto;	
 	top: 0;
-	z-index: 1; 
+	z-index: 2; 
 }
 
 .left li, .right li {
@@ -124,7 +124,26 @@
 	outline: none;
 }
 
-#next1, #next2, #next3, #next4, #create {
+#form1 label.error, #form2 label.error, #form3 label.error, #form4 label.error {
+	border-left: 5px solid #FB3A3A;
+    color: #ccc;
+    display: inline-block;
+    margin: 4px 0 5px 125px;
+    padding-left: 20px;
+    text-align: left;
+    width: 220px;
+}
+
+#form5 label.error {
+	border-left: 5px solid #FB3A3A;
+    color: #ccc;
+    margin: 4px 0 5px 125px;
+    padding-left: 20px;
+    text-align: left;
+    width: 220px;
+}
+
+.submit1, .submit2, .submit3, .submit4, .submit5 {
 	background-color: #02B3E4;
 	color: white;
 	outline: none;
@@ -132,8 +151,8 @@
 	width: 65px;
 }
 
-#create {
-	width: 100px;
+#textArea {
+	outline: none;
 }
 
 section {
