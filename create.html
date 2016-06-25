@@ -6,17 +6,19 @@
 	<title>Create the Event</title>
 	<link rel="stylesheet" href="style2.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- latest version of jQuery library -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 </head>
 <body>
   <div class="header">
       <ul class="left">
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/index.html">Event Planner</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/find.html">Find an Event</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/create2.html">Create an Event</a></li>
+        <li><a href="index.html">Event Planner</a></li>
+        <li><a href="find.html">Find an Event</a></li>
+        <li><a href="create.html">Create an Event</a></li>
       </ul>
       <ul class="right">
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/logIn.html">LogIn</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/signUp.html">SignUp</a></li>
+        <li><a href="logIn.html">LogIn</a></li>
+        <li><a href="signUp.html">SignUp</a></li>
       </ul>
   </div>
   <div class="indicator" style="left: 400px"></div>
@@ -31,25 +33,32 @@
     </ul>
   </div>
   <section class="step1">
+  <form action="" method="post" id="form1" novalidate="novalidate">
     <h3>Event Information:</h3><br>
-    <label for="eventName">Name of the Event:<br>
-      <input type="text" name="name" id="eventName" required autofocus>
-    </label>
-    <label for="event">
-    <datalist id="event">
-      <option value="Art">
-      <option value="Hiking">
-      <option value="Tech">
-      <option value="Health">
-    </datalist>
-    Type of the Event:<br>
-    <input type="text" list="event" name="event" id="event" required></label>
-    <button id="next1">Next</button>
+    <div>
+        <label for="eventName">Name of the Event:<br>
+          <input type="text" name="eventName" id="eventName" required autofocus>
+        </label>
+    </div>
+    <div>
+      <label for="event">
+      <datalist id="event">
+        <option value="Art">
+        <option value="Hiking">
+        <option value="Tech">
+        <option value="Health">
+      </datalist>
+      Type of the Event:<br>
+      <input type="text" list="event" name="event" id="event" required></label>
+    </div>
+    <input type="submit" value="Next" class="submit1"/>
+  </form>
   </section>
   <section class="step2">
+  <form action="" method="post" id="form2" novalidate="novalidate">
     <h3 class="green">Info about the Event Host:</h3>
       <label for="hostName">Name:<br>
-        <input type="text" name="name" id="hostName" required autocomplete="name">
+        <input type="text" name="hostName" id="hostName" required autocomplete="name">
       </label>
       <label for="phone">Phone Number:<br>
         <input type="tel" name="phone" id="phone" required autocomplete="tel">
@@ -58,27 +67,31 @@
         <input type="text" name="email" id="email" placeholder="name@example.com" required autocomplete="email">
       </label>
       <label for="company">Company Name <span style="color:#555">(optional)</span>:<br>
-        <input type="text" id="optional">
+        <input type="text" name="optional" id="optional">
       </label>
-    <button id="next2">Next</button>
+    <input type="submit" value="Next" class="submit2"/>
+  </form>
   </section>
   <section class="step3">
+  <form action="" method="post" id="form3" novalidate="novalidate">
     <h3 class="green">Event Timing</h3>
       <label for="date">Event start Date and Time:<br>
-        <input type="datetime-local" id="date">
+        <input type="datetime-local" name="start_date" id="start-date">
       </label>
       <label for="date">Event end Date and Time:<br>
-        <input type="datetime-local" id="date">
+        <input type="datetime-local" name="end_date" id="end-date">
       </label>
-    <button id="next3">Next</button>
+    <input type="submit" value="Next" class="submit3"/>
+  </form>
   </section>
   <section class="step4">
+  <form action="" method="post" id="form4" novalidate="novalidate">
     <h3 class="green">Location</h3>
       <label for="address">Address <br> Line 1:<br>
         <input type="text" name="address" id="address" required autocomplete="address-line1">
       </label>
       <label for="address2">Line 2 (optional):<br>
-        <input type="text" name="address" id="optional" required autocomplete="address-line2">
+        <input type="text" name="optional" id="optional" autocomplete="address-line2">
       </label>
       <label for="city">City:<br>
         <input type="text" name="city" id="city" required autocomplete="city">
@@ -92,25 +105,105 @@
       <label for="country">Country:<br>
         <input type="text" name="country" id="country" required autocomplete="country">
       </label>
-    <button id="next4">Next</button>
+    <input type="submit" value="Next" class="submit4"/>
+  </form>
   </section>
   <section class="step5">
+  <form action="" method="post" id="form5" novalidate="novalidate">
     <h3 class="green">Description about the Event:</h3>
-    <textarea id="textArea" rows="10" cols="80" placeholder="Few words about the Event..."></textarea>
+    <textarea name="textArea" id="textArea" rows="10" cols="80" placeholder="Few words about the Event..."></textarea>
     <br><br>
     <div id="create">
-      <button onclick="checkMove();" id="create" type="text">Create an Event</button>
+      <input style="width: 100px" type="submit" value="Create an Event" class="submit5"/>
     </div>
+  </form>
   </section>
 </div>
 </body>
 <script>
-    var count=1, val;
+$(document).ready(function() {
+    var count=1, val, start, end, error_free = false;
+
+    function getMonth(dateTime) {
+      dateTime = dateTime.split('-');
+      var date = ""; 
+      switch(dateTime[1]) {
+        case "01":
+          date = dateTime[2] + ' Jan ' + dateTime[0];
+          break;
+        case "02":
+          date = dateTime[2] + ' Feb ' + dateTime[0];
+          break;
+        case "03":
+          date = dateTime[2] + ' Mar ' + dateTime[0];
+          break;
+        case "04":
+          date = dateTime[2] + ' Apr ' + dateTime[0];
+          break;
+        case "05":
+          date = dateTime[2] + ' May ' + dateTime[0];
+          break;
+        case "06":
+          date = dateTime[2] + ' Jun ' + dateTime[0];
+          break;
+        case "07":
+          date = dateTime[2] + ' Jul ' + dateTime[0];
+          break;
+        case "08":
+          date = dateTime[2] + ' Aug ' + dateTime[0];
+          break;
+        case "09":
+          date = dateTime[2] + ' Sep ' + dateTime[0];
+          break;
+        case "10":
+          date = dateTime[2] + ' Oct ' + dateTime[0];
+          break;
+        case "11":
+          date = dateTime[2] + ' Nov ' + dateTime[0];
+          break;
+        case "12":
+          date = dateTime[2] + ' Dec ' + dateTime[0];
+          break;
+        default:
+          break; 
+      }
+      return date;
+    }
+
+    function getTime(dateTime) {
+      if(dateTime != undefined) {
+        dateTime = dateTime.split(':');
+        var time;
+        if (dateTime[0] < 12) {
+          time = dateTime[0] + ':' + dateTime[1] + 'AM';
+        }
+        else if (dateTime[0] == 12) {
+          time = dateTime[0] + ':' + dateTime[1] + 'PM';
+        }
+        else if (dateTime[0] == 24) {
+          time = '00' + ':' + dateTime[1] + 'AM';
+        }
+        else {
+          time = (dateTime[0] - 12) + ':' + dateTime[1] + 'PM';
+        }
+      }
+      return time;
+    }
+
+    function getTiming(dateTime) {
+      dateTime = dateTime.split('T');
+      var date = getMonth(dateTime[0]);
+      var time = getTime(dateTime[1]);
+      return date + ' @ ' + time; 
+    }
+
     $('#' + count).css('border', '2px solid #02B3E4');
     $('#' + count + '  div').css('color', '#02B3E4');
+
     function next(i) {  
       $('#' + count).css('border', '2px solid #999');
       $('#' + count + '  div').css('color', '#fff');
+      $('#' + count).css('background', '#02B3E4');
       count = i + 1;
       $('#' + count).css('border', '2px solid #02B3E4');
       $('#' + count + '  div').css('color', '#02B3E4');
@@ -121,7 +214,7 @@
       return;   
     }
 
-    function validate(focus,value) {
+    /*function validate(focus,value) {
       var filter;
       switch(focus) {
         case "hostName":
@@ -143,13 +236,25 @@
           break;
         case "optional":
           break;
+        case "start-date":
+          start = getTiming(value);
+          break;
+        case "end-date":
+          end = getTiming(value);
+          break;
         default:
           if(value == '') {
-            alert('Please fill out this field');
+            $('#'+focus).removeClass("valid").addClass("invalid");
+            $('.'+focus).removeClass("error").addClass("error_show");
+            error_free - false;
+          }
+          else {
+            $('#'+focus).removeClass("invalid").addClass("valid");
+            $('.'+focus).removeClass("error_show").addClass("error");
           }
           break;
       }
-      return false;
+      return;
     }
 
     $('input').focusout(function() {
@@ -157,24 +262,172 @@
       var focus = $(this).attr('id');
       validate(focus,value);
     });
-    
 
     $('button').click(function() {
       val = $(this).attr('id');
       if(val !== 'create') {
         val = val.slice(-1);
-        $('#' + val).css('background', '#02B3E4');
-        next(parseInt(val));
+        if(error_free) {
+          $('#' + val).css('background', '#02B3E4');
+          next(parseInt(val));
+        }
       }
       else {
-        return;
+        if(!$('textarea').val()) {
+          var res = confirm('Would you like to add some more info about the event');
+          if(res) {
+            alert('Please fill out the textarea');
+          }
+        }
+        else {
+
+        }
       }
-    });
+    });*/
+    (function($,W,D)
+    {
 
+        $.validator.addMethod("phoneUS", function (phone, element) {
+        phone = phone.replace(/\s+/g, "");
+        return this.optional(element) || phone.length > 9 && phone.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+        });
 
-    
-    
-    
-  
+        $.validator.addMethod("validemail", function (email, element) {
+        return this.optional(element) || email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
+        });
+
+        var JQUERY4U = {};
+
+        JQUERY4U.UTIL =
+        {
+            setupFormValidation: function()
+            {
+                //form1 validation rules
+                $("#form1").validate({
+                    rules: {
+                        eventName: {
+                          required: true,
+                          minlength: 3
+                        },
+                        event: {
+                          required: true,
+                          minlength: 3
+                        }
+                    },
+                    messages: {
+                        eventName: {
+                          required: "Please enter the eventName",
+                          minlength: "Please enter atleast 3 letters"
+                        },
+                        event: {
+                          required: "Please enter the type of event",
+                          minlength: "Please enter atleast 3 letters"
+                        }
+                    },
+                    submitHandler: function() {
+                      next(1);
+                    }
+                });
+                $("#form2").validate({
+                    rules: {
+                        hostName: {
+                          required: true,
+                          minlength: 3
+                        },
+                        phone: {
+                          required: true,
+                          phoneUS: true
+                        }, 
+                        email: {
+                          required: true,
+                          validemail: true
+                        }
+                    },
+                    messages: {
+                        hostName: {
+                          required: "Please enter the eventName",
+                          minlength: "Please enter atleast 3 letters"
+                        },
+                        phone: {
+                          required: "Please enter the phone number",
+                          phoneUS: "Please enter the valid phone number"
+                        },
+                        email: {
+                          required: "Please enter the valid email ID",
+                          validemail: "Please enter the valid email ID"
+                        }
+                    },
+                    submitHandler: function() {
+                      next(2);
+                    }
+                });
+                $("#form3").validate({
+                    rules: {
+                        start_date: "required",
+                        end_date: "required"
+                    },
+                    messages: {
+                        start_date: "Please enter the start date",
+                        end_date: "Please enter the start date"
+                    },
+                    submitHandler: function() {
+                      next(3);
+                    }
+                });
+                $("#form4").validate({
+                    rules: {
+                        address: {
+                          required: true,
+                          minlength: 6
+                        },
+                        city: "required",
+                        state: "required",
+                        zip: "required",
+                        country: "required"
+                    },
+                    messages: {
+                        address: {
+                          required: "Please enter the adress line 1",
+                          minlength: "Please enter atleast 6 letters"
+                        },
+                        city: "Please enter the name of the city",
+                        state: "Please enter the state",
+                        zip: "Please enter the zipcode",
+                        country: "Please enter the country name",
+                    },
+                    submitHandler: function() {
+                      next(4);
+                    }
+                });
+                $("#form5").validate({
+                    rules: {
+                        textArea: {
+                          required: true,
+                          minlength: 25,
+                          maxlength: 100
+                        }
+                    },
+                    messages: {
+                        address: {
+                          required: "Please enter the description",
+                          minlength: "Please enter minimum 25 letters",
+                          maxlength: "Please enter maximum 100 letters"
+                        }
+                    },
+                    submitHandler: function() {
+                      create();
+                    }
+                });
+
+            }
+        }
+
+        //when the dom has loaded setup form validation rules
+        
+        JQUERY4U.UTIL.setupFormValidation();
+        
+
+    })(jQuery, window, document);
+});  
 </script>
 </html>
