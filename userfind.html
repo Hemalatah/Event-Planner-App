@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Find the Event</title>
+	<link rel="stylesheet" href="css/style2.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<section class="header">
+	    <ul class="left">
+	      <li><a href="userpage.html">Event Planner</a></li>
+	      <li><a href="userfind.html">Find an Event</a></li>
+	      <li><a href="usercreate.html">Create an Event</a></li>
+	      <li id="login-right" style="margin-left: 450px; display: inline;"><a href="#">Hello Hema<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
+	    </ul>
+	</section>
+	<div id="drop-down-box">
+		<div id="arrow"></div>
+		<div id="drop-down"><br><a href="index.html">Not you? Sign Out</a><hr style="width: 80px;"></div>
+	</div>
+	<div class="indicator" style="left:220px"></div>
+	<section class="main-image">
+		<img src="images/cover.jpg"/>
+		<div>
+			<datalist id="eventlist">
+		      <option value="Art">
+		      <option value="Hiking">
+		      <option value="Tech">
+		      <option value="Health">
+		    </datalist>
+			<input type="text" list="eventlist" name="eventlist" id="type" placeholder="Search your Favourite meetup" autofocus>
+			<span class="clearable">&#9747;</span>
+			Find the meetups in the Bay Area
+		</div>
+	</section>
+	<section class="meetups">
+		
+	</section>
+	<section class="footer">
+		<ul>
+			<li><a href="#">Create an Event</a></li>
+			<li><a href="#">LogIn</a></li>
+			<li><a href="#">SignUp</a></li>
+		</ul>
+		<hr style="width: 900px;">
+		<p>&copy Event Planner 2016</p>
+	</section>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
