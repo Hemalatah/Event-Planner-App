@@ -13,13 +13,13 @@
 <body>
   <section class="header">
       <ul class="left">
-        <li><a href="userpage.html">Event Planner</a></li>
+        <li><a href="userHemalatah.html">Event Planner</a></li>
         <li><a href="userfind.html">Find an Event</a></li>
         <li><a href="usercreate.html">Create an Event</a></li>
-        <li id="login-right" style="margin-left: 450px; display: inline;"><a href="#">Hello Hema<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
+        <li id="login-right" style="margin-left: 400px; display: inline;"><a href="#">Hello Hemalatah<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
       </ul>
   </section>
-  <div id="drop-down-box">
+  <div id="drop-down-box" style="padding-top: 5px">
     <div id="arrow"></div>
     <div id="drop-down"><br><a href="index.html">Not you? Sign Out</a><hr style="width: 80px;"></div>
   </div>
@@ -35,7 +35,7 @@
     </ul>
   </div>
   <section class="step1">
-  <form action="" method="post" id="form1" novalidate="novalidate">
+  <form action="" method="POST" id="form1" novalidate="novalidate">
     <h3>Event Information:</h3><br>
     <div>
         <label for="eventName">Name of the Event:<br>
@@ -51,9 +51,9 @@
         <option value="Health">
       </datalist>
       Type of the Event:<br>
-      <input type="text" list="event" name="event" id="event" required></label>
+      <input type="text" list="event" name="event" id="eventType" required></label>
     </div>
-    <input type="submit" value="Next" class="submit1"/>
+    <button type="submit" class="submit1"/>Next</button>
   </form>
   </section>
   <section class="step2">
@@ -63,34 +63,34 @@
         <input type="text" name="hostName" id="hostName" required autocomplete="name">
       </label>
       <label for="phone">Phone Number:<br>
-        <input type="tel" name="phone" id="phone" required autocomplete="tel">
+        <input type="tel" name="phone" id="phoneNumber" required autocomplete="tel">
       </label>
       <label for="email">Email Address:<br>
-        <input type="text" name="email" id="email" placeholder="name@example.com" required autocomplete="email">
+        <input type="text" name="email" id="eAddress" placeholder="name@example.com" required autocomplete="email">
       </label>
       <label for="company">Company Name <span style="color:#555">(optional)</span>:<br>
         <input type="text" name="optional" id="optional">
       </label>
-    <input type="submit" value="Next" class="submit2"/>
+    <button type="submit" class="submit2"/>Next</button>
   </form>
   </section>
   <section class="step3">
   <form action="" method="post" id="form3" novalidate="novalidate">
     <h3 class="green">Event Timing</h3>
       <label for="date">Event start Date and Time:<br>
-        <input type="datetime-local" name="start_date" id="start-date">
+        <input type="datetime-local" name="start_date" id="startTime">
       </label>
       <label for="date">Event end Date and Time:<br>
-        <input type="datetime-local" name="end_date" id="end-date">
+        <input type="datetime-local" name="end_date" id="endTime">
       </label>
-    <input type="submit" value="Next" class="submit3"/>
+    <button type="submit" class="submit3"/>Next</button>
   </form>
   </section>
   <section class="step4">
   <form action="" method="post" id="form4" novalidate="novalidate">
     <h3 class="green">Location</h3>
       <label for="address">Address <br> Line 1:<br>
-        <input type="text" name="address" id="address" required autocomplete="address-line1">
+        <input type="text" name="address" id="address1" required autocomplete="address-line1">
       </label>
       <label for="address2">Line 2 (optional):<br>
         <input type="text" name="optional" id="optional" autocomplete="address-line2">
@@ -107,276 +107,21 @@
       <label for="country">Country:<br>
         <input type="text" name="country" id="country" required autocomplete="country">
       </label>
-    <input type="submit" value="Next" class="submit4"/>
+    <button type="submit" class="submit4"/>Next</button>
   </form>
   </section>
   <section class="step5">
-  <form action="" method="post" id="form5" novalidate="novalidate">
+  <form action="userpage.html" method="POST" id="form5" novalidate="novalidate">
     <h3 class="green">Description about the Event:</h3>
     <textarea name="textArea" id="textArea" rows="10" cols="80" placeholder="Few words about the Event..."></textarea>
     <br><br>
     <div id="create">
-      <input style="width: 100px" type="submit" value="Create an Event" class="submit5"/>
+      <button style="width: 100px" type="submit" class="submit5"/>Create an Event</button>
     </div>
   </form>
   </section>
 </div>
 </body>
-<script>
-$(document).ready(function() {
-    var count=1, val, start, end, error_free = false;
-
-    function getMonth(dateTime) {
-      dateTime = dateTime.split('-');
-      var date = ""; 
-      switch(dateTime[1]) {
-        case "01":
-          date = dateTime[2] + ' Jan ' + dateTime[0];
-          break;
-        case "02":
-          date = dateTime[2] + ' Feb ' + dateTime[0];
-          break;
-        case "03":
-          date = dateTime[2] + ' Mar ' + dateTime[0];
-          break;
-        case "04":
-          date = dateTime[2] + ' Apr ' + dateTime[0];
-          break;
-        case "05":
-          date = dateTime[2] + ' May ' + dateTime[0];
-          break;
-        case "06":
-          date = dateTime[2] + ' Jun ' + dateTime[0];
-          break;
-        case "07":
-          date = dateTime[2] + ' Jul ' + dateTime[0];
-          break;
-        case "08":
-          date = dateTime[2] + ' Aug ' + dateTime[0];
-          break;
-        case "09":
-          date = dateTime[2] + ' Sep ' + dateTime[0];
-          break;
-        case "10":
-          date = dateTime[2] + ' Oct ' + dateTime[0];
-          break;
-        case "11":
-          date = dateTime[2] + ' Nov ' + dateTime[0];
-          break;
-        case "12":
-          date = dateTime[2] + ' Dec ' + dateTime[0];
-          break;
-        default:
-          break; 
-      }
-      return date;
-    }
-
-    function getTime(dateTime) {
-      if(dateTime != undefined) {
-        dateTime = dateTime.split(':');
-        var time;
-        if (dateTime[0] < 12) {
-          time = dateTime[0] + ':' + dateTime[1] + 'AM';
-        }
-        else if (dateTime[0] == 12) {
-          time = dateTime[0] + ':' + dateTime[1] + 'PM';
-        }
-        else if (dateTime[0] == 24) {
-          time = '00' + ':' + dateTime[1] + 'AM';
-        }
-        else {
-          time = (dateTime[0] - 12) + ':' + dateTime[1] + 'PM';
-        }
-      }
-      return time;
-    }
-
-    function getTiming(dateTime) {
-      dateTime = dateTime.split('T');
-      var date = getMonth(dateTime[0]);
-      var time = getTime(dateTime[1]);
-      return date + ' @ ' + time; 
-    }
-
-    $('#' + count).css('border', '2px solid #02B3E4');
-    $('#' + count + '  div').css('color', '#02B3E4');
-
-    function next(i) {  
-      $('#' + count).css('border', '2px solid #999');
-      $('#' + count + '  div').css('color', '#fff');
-      $('#' + count).css('background', '#02B3E4');
-      count = i + 1;
-      $('#' + count).css('border', '2px solid #02B3E4');
-      $('#' + count + '  div').css('color', '#02B3E4');
-      $('.step' + count).css('display', 'block');
-      $('html,body').animate({
-        scrollTop: $('.step' + count).offset().top},
-        'slow');
-      return;   
-    }
-
-    /* add link to the progress bar */
-
-    $('.progress-bar ul li').on("click", function() {
-      var id = $(this).attr('id');
-      $('html,body').animate({
-        scrollTop: $('.step' + id).offset().top-200},
-        'slow');
-      return;
-    });
-
-    /* signUp and logIn verification */
-
-    // logIn
-
-
-
-    (function($,W,D)
-    {
-
-        $.validator.addMethod("phoneUS", function (phone, element) {
-        phone = phone.replace(/\s+/g, "");
-        return this.optional(element) || phone.length > 9 && phone.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
-        });
-
-        $.validator.addMethod("validemail", function (email, element) {
-        return this.optional(element) || email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
-        });
-
-        var JQUERY4U = {};
-
-        JQUERY4U.UTIL =
-        {
-            setupFormValidation: function()
-            {
-                //form1 validation rules
-                $("#form1").validate({
-                    rules: {
-                        eventName: {
-                          required: true,
-                          minlength: 3
-                        },
-                        event: {
-                          required: true,
-                          minlength: 3
-                        }
-                    },
-                    messages: {
-                        eventName: {
-                          required: "Please enter the eventName",
-                          minlength: "Please enter atleast 3 letters"
-                        },
-                        event: {
-                          required: "Please enter the type of event",
-                          minlength: "Please enter atleast 3 letters"
-                        }
-                    },
-                    submitHandler: function() {
-                      next(1);
-                    }
-                });
-                $("#form2").validate({
-                    rules: {
-                        hostName: {
-                          required: true,
-                          minlength: 3
-                        },
-                        phone: {
-                          required: true,
-                          phoneUS: true
-                        }, 
-                        email: {
-                          required: true,
-                          validemail: true
-                        }
-                    },
-                    messages: {
-                        hostName: {
-                          required: "Please enter the eventName",
-                          minlength: "Please enter atleast 3 letters"
-                        },
-                        phone: {
-                          required: "Please enter the phone number",
-                          phoneUS: "Please enter the valid phone number"
-                        },
-                        email: {
-                          required: "Please enter the email ID",
-                          validemail: "Please enter the valid email ID"
-                        }
-                    },
-                    submitHandler: function() {
-                      next(2);
-                    }
-                });
-                $("#form3").validate({
-                    rules: {
-                        start_date: "required",
-                        end_date: "required"
-                    },
-                    messages: {
-                        start_date: "Please enter the start date",
-                        end_date: "Please enter the start date"
-                    },
-                    submitHandler: function() {
-                      next(3);
-                    }
-                });
-                $("#form4").validate({
-                    rules: {
-                        address: {
-                          required: true,
-                          minlength: 6
-                        },
-                        city: "required",
-                        state: "required",
-                        zip: "required",
-                        country: "required"
-                    },
-                    messages: {
-                        address: {
-                          required: "Please enter the adress line 1",
-                          minlength: "Please enter atleast 6 letters"
-                        },
-                        city: "Please enter the name of the city",
-                        state: "Please enter the state",
-                        zip: "Please enter the zipcode",
-                        country: "Please enter the country name",
-                    },
-                    submitHandler: function() {
-                      next(4);
-                    }
-                });
-                $("#form5").validate({
-                    rules: {
-                        textArea: {
-                          required: true,
-                          minlength: 25,
-                          maxlength: 100
-                        }
-                    },
-                    messages: {
-                        address: {
-                          required: "Please enter the description",
-                          minlength: "Please enter minimum 25 letters",
-                          maxlength: "Please enter maximum 100 letters"
-                        }
-                    },
-                    submitHandler: function() {
-                      create();
-                    }
-                });
-
-            }
-        }
-
-        //when the dom has loaded setup form validation rules
-        
-        JQUERY4U.UTIL.setupFormValidation();
-        
-
-    })(jQuery, window, document);
-});  
-</script>
+<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </html>
