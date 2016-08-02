@@ -4,28 +4,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LogIn to the Event</title>
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="css/style2.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 </head>
 <body>
-	<div class="header">
-      <ul class="left">
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/index.html">Event Planner</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/find.html">Find an Event</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/create2.html">Create an Event</a></li>
-      </ul>
-      <ul class="right">
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/logIn.html">LogIn</a></li>
-        <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/signUp.html">SignIn</a></li>
-      </ul>
-  	</div>
-  	<div class="indicator" style="left: 1000px"></div>
+	<section class="header">
+	    <ul class="left">
+	      <li><a href="index.html">Event Planner</a></li>
+	      <li><a href="find.html">Find an Event</a></li>
+	      <li><a href="create.html">Create an Event</a></li>
+	    </ul>
+	    <ul id ="right">
+	      <li><a href="logIn.html">LogIn</a></li>
+	      <li><a href="signUp.html">SignUp</a></li>
+	    </ul>
+	</section>
+  	<div class="indicator" style="left: 970px"></div>
 	<section class="signUp">
+	<form action="userpage.html" method="GET" id="form-login" novalidate="novalidate">
 		<h2>Log In</h2>
 		<hr>
 		<h4>Not registered yet?</h4>
-	    <a href="#"><button type="button">Sign Up</button></a>
+	    <a href="signUp.html"><button type="button">Sign Up</button></a>
+	    <p>
+	    <label for="name">Username:<br>
+	      <input id="username" type="text" name="username_signup" required autocomplete="name" autofocus>
+	    </label>	
+	    </p>
 	    <p>
 	    <label for="email">Email Address:<br>
 	      <input id="email" type="text" name="email" required autocomplete="email">
@@ -34,16 +41,20 @@
 	    <p>
 	    <label for="password">Password:<br>
 	    	<h5><a href="#">Forgot Password?</a></h5>
-	        <input id="password" type="password" required autocomplete="new-password">
+	        <input id="password" type="password" name="password" required autocomplete="new-password">
 	    </label>
 	    </p>
-	    <a href="#"><button type="button">Log In</button></a>
+	    <div class="login-show-error">Invalid username and password.</div><br><br>
+	    <button id="logIn" type="submit">Log In</button>
 	    <div id="or">OR</div>
 	    </div>
 	    <footer>
 			<div class="facebook-icon"><a href="#"><i class="fa fa-facebook"></i></a></div><h4>SignIn with facebook</h4><br>
 			<div class="googleplus-icon"><a href="#"><i class="fa fa-google-plus"></i></a></div><h4>SignIn with google plus</h4>
 	    </footer>
+	</form>
 	</section>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
