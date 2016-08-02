@@ -4,19 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Find the Event</title>
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="css/style2.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 	<section class="header">
 	    <ul class="left">
-	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/index.html">Event Planner</a></li>
-	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/find.html">Find an Event</a></li>
-	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/create2.html">Create an Event</a></li>
+	      <li><a href="index.html">Event Planner</a></li>
+	      <li><a href="find.html">Find an Event</a></li>
+	      <li><a href="create.html">Create an Event</a></li>
 	    </ul>
-	    <ul class="right">
-	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/logIn.html">LogIn</a></li>
-	      <li><a href="file:///Users/alexandernageswaran/Documents/Hema/udacity/Meetup%20Event%20Planner/signUp.html">SignUp</a></li>
+	    <ul id ="right">
+	      <li><a href="logIn.html">LogIn</a></li>
+	      <li><a href="signUp.html">SignUp</a></li>
 	    </ul>
 	</section>
 	<div class="indicator" style="left:220px"></div>
@@ -37,6 +37,11 @@
 	<section class="meetups">
 		
 	</section>
+	<div class="modal">
+	<div class="close-icon">X</div>
+	<div class="event-detail">	
+	</div>
+	</div>
 	<section class="footer">
 		<ul>
 			<li><a href="#">Create an Event</a></li>
@@ -46,6 +51,7 @@
 		<hr style="width: 900px;">
 		<p>&copy Event Planner 2016</p>
 	</section>
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
