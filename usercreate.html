@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create the Event</title>
 	<link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/style1.css">
+  <link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 700px)" href="css/style1.css">
+  <link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="css/style1.css">
+  <link rel="stylesheet" media="screen and (min-width: 901px) and (max-width: 1100px)" href="css/style1.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- latest version of jQuery library -->
@@ -15,8 +19,8 @@
       <ul class="left">
         <li><a href="userpage.html">Event Planner</a></li>
         <li><a href="userfind.html">Find an Event</a></li>
-        <li><a href="usercreate.html">Create an Event</a></li>
-        <li id="login-right" style="margin-left: 400px; display: inline;"><a href="#">Hello Hemalatah<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
+        <li><a href="usercreate.html" style="color: white;">Create an Event</a></li>
+        <li id="login-right"><a href="#">Hello Hemalatah<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
       </ul>
   </section>
   <div id="drop-down-box" style="padding-top: 5px">
@@ -37,39 +41,39 @@
   <div id="snackbar">Event has been sucessfully created !!!</div>
   <section class="step1">
   <form action="" method="POST" id="form1" novalidate="novalidate">
-    <h3>Event Information:</h3><br>
-    <div>
-        <label for="eventName">Name of the Event:<br>
+    <h3>Event Information:</h3>
+    
+        <label for="eventName">Name of the Event:
           <input type="text" name="eventName" id="eventName" required autofocus>
         </label>
-    </div>
-    <div>
+ 
       <label for="event">
+      Type of the Event:
+      <input type="text" list="event" name="eventType">
       <datalist id="event">
         <option value="Art">
         <option value="Hiking">
         <option value="Tech">
         <option value="Health">
       </datalist>
-      Type of the Event:<br>
-      <input type="text" list="event" name="event" id="eventType" required></label>
-    </div>
+      </label>
+    
     <button type="submit" class="submit1"/>Next</button>
   </form>
   </section>
   <section class="step2">
   <form action="" method="post" id="form2" novalidate="novalidate">
     <h3 class="green">Info about the Event Host:</h3>
-      <label for="hostName">Name:<br>
+      <label for="hostName">Name:
         <input type="text" name="hostName" id="hostName" required autocomplete="name">
       </label>
-      <label for="phone">Phone Number:<br>
+      <label for="phone">Phone Number:
         <input type="tel" name="phone" id="phoneNumber" required autocomplete="tel">
       </label>
-      <label for="email">Email Address:<br>
+      <label for="email">Email Address:
         <input type="text" name="email" id="eAddress" placeholder="name@example.com" required autocomplete="email">
       </label>
-      <label for="company">Company Name <span style="color:#555">(optional)</span>:<br>
+      <label for="company">Company Name <span style="color:#555">(optional)</span>:
         <input type="text" name="optional" id="optional">
       </label>
     <button type="submit" class="submit2"/>Next</button>
@@ -78,10 +82,10 @@
   <section class="step3">
   <form action="" method="post" id="form3" novalidate="novalidate">
     <h3 class="green">Event Timing</h3>
-      <label for="date">Event start Date and Time:<br>
+      <label for="date">Event start Date and Time:
         <input type="datetime-local" name="start_date" id="startTime">
       </label>
-      <label for="date">Event end Date and Time:<br>
+      <label for="date">Event end Date and Time:
         <input type="datetime-local" name="end_date" id="endTime">
       </label>
     <button type="submit" class="submit3"/>Next</button>
@@ -90,22 +94,22 @@
   <section class="step4">
   <form action="" method="post" id="form4" novalidate="novalidate">
     <h3 class="green">Location</h3>
-      <label for="address">Address <br> Line 1:<br>
+      <label for="address">Address <br> Line 1:
         <input type="text" name="address" id="address1" required autocomplete="address-line1">
       </label>
-      <label for="address2">Line 2 (optional):<br>
+      <label for="address2">Line 2 (optional):
         <input type="text" name="optional" id="optional" autocomplete="address-line2">
       </label>
-      <label for="city">City:<br>
+      <label for="city">City:
         <input type="text" name="city" id="city" required autocomplete="city">
       </label>
-      <label for="state">State/Province:<br>
+      <label for="state">State/Province:
         <input type="text" name="state" id="state" required autocomplete="address-level2">
       </label>
-      <label for="zip">Zip Code:<br>
+      <label for="zip">Zip Code:
         <input type="text" name="zip" id="zip" required autocomplete="postal-code">
       </label>
-      <label for="country">Country:<br>
+      <label for="country">Country:
         <input type="text" name="country" id="country" required autocomplete="country">
       </label>
     <button type="submit" class="submit4"/>Next</button>
@@ -115,9 +119,8 @@
   <form action="userpage.html" method="POST" id="form5" novalidate="novalidate">
     <h3 class="green">Description about the Event:</h3>
     <textarea name="textArea" id="textArea" rows="10" cols="80" placeholder="Few words about the Event..."></textarea>
-    <br><br>
     <div id="create">
-      <button style="width: 100px" type="submit" class="submit5"/>Create an Event</button>
+      <button style="width: 100px" type="submit" class="submit5">Create an Event</button>
     </div>
   </form>
   </section>
