@@ -6,7 +6,7 @@ $(document).ready(function() {
   /* sign out */
 
   $('#down-arrow').on("click", function() {
-    $('#drop-down-box').css('visibility', 'visible');
+    $('#drop-down').css('visibility', 'visible');
   });
 
 
@@ -159,9 +159,9 @@ $(document).ready(function() {
     $('html,body').animate({
       scrollTop: $('.step' + count).offset().top},
       'slow');
+    $('.step' + count + ' form').find('*').filter(':input:visible:first').focus();
     return;   
   }
-
 
   /* Add created event to the object */
   
@@ -207,19 +207,31 @@ $(document).ready(function() {
       'slow');
     return;
   });
-  
+
+
   /* form validation */
 
   (function($,W,D)
-  {   
-      var newObject = {}, username, email, pwd;
+  {  
 
       $.validator.addMethod("validemail", function (email, element) {
       return this.optional(element) || email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
       });
 
-      $.validator.addMethod("validpassword", function (password, element) {
-      return this.optional(element) || password.length > 9 && password.match(/\d/) && password.match(/[A-z]/) && password.match(re = /[A-Z]/);
+      $.validator.addMethod("pwdlength", function (password, element) {
+      return this.optional(element) || password.length > 9;
+      });
+
+      $.validator.addMethod("pwdnum", function (password, element) {
+      return this.optional(element) || password.match(/\d/);
+      });
+
+      $.validator.addMethod("pwdalpha", function (password, element) {
+      return this.optional(element) || password.match(/[a-z]/);
+      });
+
+      $.validator.addMethod("pwdcap", function (password, element) {
+      return this.optional(element) || password.match(/[A-Z]/);
       });
 
       $.validator.addMethod("phoneUS", function (phone, element) {
@@ -227,9 +239,6 @@ $(document).ready(function() {
       return this.optional(element) || phone.length >= 9 && phone.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
       });
 
-      $.validator.addMethod("validemail", function (email, element) {
-      return this.optional(element) || email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
-      });
 
       var JQUERY4U = {};
 
@@ -244,7 +253,7 @@ $(document).ready(function() {
                         required: true,
                         minlength: 3
                       },
-                      event: {
+                      eventType: {
                         required: true,
                         minlength: 3
                       }
@@ -254,7 +263,7 @@ $(document).ready(function() {
                         required: "Please enter the eventName",
                         minlength: "Please enter atleast 3 letters"
                       },
-                      event: {
+                      eventType: {
                         required: "Please enter the type of event",
                         minlength: "Please enter atleast 3 letters"
                       }
@@ -372,7 +381,10 @@ $(document).ready(function() {
                       },
                       password: {
                         required: true,
-                        validpassword: true
+                        pwdlength: true,
+                        pwdnum: true,
+                        pwdalpha: true,
+                        pwdcap: true
                       }
                   },
                   messages: {
@@ -386,53 +398,54 @@ $(document).ready(function() {
                       },
                       password: {
                         required: "Please enter the password",
-                        validpassword: "Please enter the valid password"
-
+                        pwdlength: "Please enter atleast 8 characters",
+                        pwdnum: "Please enter atleast one number",
+                        pwdalpha: "Please enter atleast one letter",
+                        pwdcap: "Please enter atleast one capital letter"
                       }
                   },
                   submitHandler: function() {
-                    username = $('#username').val();
-                    email = $('#email').val();
-                    pwd = $('#password').val();
-                    if(!logindata.hasOwnProperty(username)) {
-                      $('.login-show-error').css('display','inline');
-                    }
-                    else {
-                      if(logindata.username.email == email && logindata.name.pwd == pwd) {
-                        alert('true');
-                        w.location.replace("userpage.html");
-                      }
-                    }
+                    var snackbar = $("#snackbar");
+                    snackbar.addClass('show');
+                    setTimeout(function(){ snackbar.removeClass('show');
+                      window.location.replace("userpage.html");}, 3000);
+                    
                   }
               });
 
               $("#form-signup").validate({
                   rules: {
-                      username_signup: {
+                      username: {
                         required: true,
                         minlength: 6
                       },
-                      email_signup: {
+                      email: {
                         required: true,
                         validemail: true
                       },
-                      password_signup: {
+                      password: {
                         required: true,
-                        validpassword: true
+                        pwdlength: true,
+                        pwdnum: true,
+                        pwdalpha: true,
+                        pwdcap: true
                       }
                   },
                   messages: {
-                      username_signup: {
+                      username: {
                         required: "Please enter the username",
                         minlength: "Please enter atleast 6 characters"
                       },
-                      email_signup: {
+                      email: {
                         required: "Please enter the email ID",
                         validemail: "Please enter the valid email ID"
                       },
-                      password_signup: {
+                      password: {
                         required: "Please enter the password",
-                        validpassword: "Please enter the valid password"
+                        pwdlength: "Please enter atleast 8 characters",
+                        pwdnum: "Please enter atleast one number",
+                        pwdalpha: "Please enter atleast one letter",
+                        pwdcap: "Please enter atleast one capital letter"
 
                       }
                   },
@@ -482,6 +495,7 @@ $(document).ready(function() {
       items[i].style.display = 'inline-block';
     }
   });
+  
 
 });
   
