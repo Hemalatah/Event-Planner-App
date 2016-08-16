@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Find the Event</title>
-	<link rel="stylesheet" href="css/style2.css">
-	<link rel="stylesheet" media="screen and (max-width: 500px)" href="css/style1.css">
-	<link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 700px)" href="css/style1.css">
-	<link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="css/style1.css">
-	<link rel="stylesheet" media="screen and (min-width: 901px) and (max-width: 1100px)" href="css/style1.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-</head>
-<body>
-	<section class="header">
-	    <ul class="left">
-	      <li><a href="index.html">Event Planner</a></li>
-	      <li><a href="find.html" style="color: white;">Find an Event</a></li>
-	      <li><a href="create.html">Create an Event</a></li>
-	    </ul>
-	    <ul id ="right">
-	      <li><a href="logIn.html">LogIn</a></li>
-	      <li><a href="signUp.html">SignUp</a></li>
-	    </ul>
-	</section>
-	<section class="main-image">
-		<img src="images/cover.jpg"/>
-		<div>
-			<datalist id="eventlist">
-		      <option value="Art">
-		      <option value="Hiking">
-		      <option value="Tech">
-		      <option value="Health">
-		    </datalist>
-			<input type="text" list="eventlist" name="eventlist" placeholder="Search your Favourite meetup" autofocus>
-			<span class="clearable">&#9747;</span>
-			<h4>Find the meetups in the Bay Area</h4>
-		</div>
-	</section>
-	<section class="meetups">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Find the Event</title>
+		<link rel="stylesheet" href="css/style2.css">
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link rel="stylesheet" media="screen and (max-width: 500px)" href="css/style1.css">
+		<link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 700px)" href="css/style1.css">
+		<link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="css/style1.css">
+		<link rel="stylesheet" media="screen and (min-width: 901px) and (max-width: 1100px)" href="css/style1.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<section class="header">
+		    <ul class="left">
+		      <li><a href="index.html">Event Planner</a></li>
+		      <li><a href="find.html" style="color: white;">Find an Event</a></li>
+		      <li><a href="create.html">Create an Event</a></li>
+		    </ul>
+		    <ul id ="right">
+		      <li><a href="logIn.html">LogIn</a></li>
+		      <li><a href="signUp.html">SignUp</a></li>
+		    </ul>
+		</section>
+		<section class="main-image">
+			<img src="images/cover.jpg" alt="cover image"/>
+			<div>
+				<datalist id="eventlist">
+			      <option value="Art">
+			      <option value="Hiking">
+			      <option value="Tech">
+			      <option value="Health">
+			    </datalist>
+				<input type="text" list="eventlist" name="eventlist" placeholder="Search your Favourite meetup" autofocus>
+				<span class="clearable">&#9747;</span>
+				<h4>Find the meetups in the Bay Area</h4>
+			</div>
+		</section>
+		<section class="meetups">
 		
-	</section>
-	<div class="modal">
-	<div class="close-icon">X</div>
-	<div class="event-detail">	
-	</div>
-	</div>
-	<section class="footer">
-		<ul>
-			<li><a href="create.html">Create an Event</a></li>
-			<li><a href="logIn.html">LogIn</a></li>
-			<li><a href="signUp.html">SignUp</a></li>
-		</ul>
-		<hr style="width: 900px;">
-		<p>&copy Event Planner 2016</p>
-	</section>
+		</section>
+		<div class="modal">
+			<div class="close-icon">X</div>
+			<div class="event-detail"></div>
+		</div>
+		<section class="footer">
+			<ul>
+				<li><a href="create.html">Create an Event</a></li>
+				<li><a href="logIn.html">LogIn</a></li>
+				<li><a href="signUp.html">SignUp</a></li>
+			</ul>
+			<hr id="footerhr">
+			<p>&copy; Event Planner 2016</p>
+		</section>
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
