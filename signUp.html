@@ -19,7 +19,7 @@
 		    <ul class="left">
 		      <li><a href="index.html">Event Planner</a></li>
 		      <li><a href="find.html">Find an Event</a></li>
-		      <li><a href="create.html">Create an Event</a></li>
+		      <li id = "createpage"><a href="#">Create an Event</a></li>
 		    </ul>
 		    <ul id ="right">
 		      <li><a href="logIn.html">LogIn</a></li>
@@ -27,25 +27,17 @@
 		    </ul>
 		</section>
 	  	<div id="snackbar">Account has been sucessfully created!!!</div>
+	  	<div id="login-warning" class="hide"> Please <i>logIn</i> or <i>signUp</i> to create an event!!</div>
 		<form action="#" method="POST" id="form-signup" class="signUp" novalidate="novalidate">
 			<h2>Sign Up</h2>
-			<br>
-			<section class="footer-signup">
+			<!--<section class="footer-signup">
 				<div class="facebook-icon"><a href="#"><i class="fa fa-facebook"></i></a></div><h4>SignIn with facebook</h4><br>
 				<div class="googleplus-icon"><a href="#"><i class="fa fa-google-plus"></i></a></div><h4>SignIn with google plus</h4>
 		    </section>
-		    <div id="or" class="ortop">OR</div>
+		    <div id="or" class="ortop">OR</div>-->
 			<p>
 				<label for="username">Username:</label>
 			      <input id="username" type="text" name="username" required autocomplete="name" autofocus>
-		    </p>
-		    <p>
-		    	<label for="employer">Employer:</label>
-                <input type="text" name="employer" id="employer" autocomplete="name">
-		    </p>
-		    <p>
-		    	<label for="jobtitle">Job Title:</label>
-                <input type="text" name="jobtitle" id="jobtitle" autocomplete="name">
 		    </p>
 		    <p>
 			    <label for="email">Email Address:</label>
@@ -54,6 +46,14 @@
 		    <p>
 			    <label for="password">Password:</label>
 			        <input id="password" type="password" name="password" required autocomplete="new-password">
+		    </p>
+		    <p>
+		    	<label for="employer">Employer (optional):</label>
+                <input type="text" name="employer" id="employer" autocomplete="name">
+		    </p>
+		    <p>
+		    	<label for="jobtitle">Job Title (optional):</label>
+                <input type="text" name="jobtitle" id="jobtitle" autocomplete="name">
 		    </p>
 		    <button type="submit" class="signup">Sign Up</button>
 		    <hr>
