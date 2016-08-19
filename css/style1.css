@@ -4,8 +4,9 @@
     text-align: center;
     width: 90%;
     margin-left: 2%; }
-  .meetup {
-    width: 200px; }
+  .meetups {
+    width: 80%;
+    padding: 4%; }
   .left li, #right li {
     margin-right: 0;
     padding-right: 9px; }
@@ -21,10 +22,13 @@
     display: inline-block; }
   .header a {
     font-size: 22px; }
+  .main-image img {
+    width: 80%;
+    margin-left: 3%; }
   .main-image div {
     height: 70px;
     width: 80%;
-    left: 10%; }
+    left: 8%; }
   .main-image div h4 {
     display: inline;
     margin-left: 70px;
@@ -73,9 +77,9 @@
     margin-left: 30px; }
   .signUp {
     top: 200px;
-    left: 30%;
+    left: 20%;
     padding: 50px;
-    width: 450px; }
+    width: 40%; }
   .signUp input {
     display: block; }
   .footer-signup {
@@ -115,11 +119,11 @@
   .header ul, .header ul li {
     display: inline-block; }
   .header a {
-    font-size: 17px; }
+    font-size: 15px; }
   .main-image div {
     height: 90px;
     width: 80%;
-    left: 15%; }
+    left: 10%; }
   .main-image div h4 {
     display: block;
     margin-left: 20%;
@@ -173,9 +177,9 @@
     width: 550px; }
   .signUp {
     top: 200px;
-    left: 50px;
+    left: 20%;
     padding: 20px;
-    width: 450px; }
+    width: 60%; }
   .signUp input {
     display: block; }
   .footer-signup {
@@ -223,10 +227,13 @@
     display: inline-block; }
   .header a {
     font-size: 20px; }
+  .main-image img {
+    width: 80%;
+    margin-left: 3%; }
   .main-image div {
     height: 70px;
     width: 80%;
-    left: 10%; }
+    left: 8%; }
   .main-image div h4 {
     display: inline;
     margin-left: -35px;
@@ -240,6 +247,9 @@
     text-align: center;
     padding: 50px;
     font-size: 10px; }
+  .meetups {
+    margin-left: -7%;
+    padding: 5%; }
   .modal {
     width: 80%;
     margin-left: 10%;
@@ -275,9 +285,9 @@
     margin-left: 30px; }
   .signUp {
     top: 200px;
-    left: 30%;
+    left: 20%;
     padding: 20px;
-    width: 450px; }
+    width: 50%; }
   .signUp input {
     display: block; }
   .footer-signup {
@@ -302,31 +312,36 @@
 
 @media screen and (max-width: 500px) {
   .header {
-    padding: 5%;
     text-align: center;
     width: 80%; }
   .left {
     margin-left: 90%; }
   #right {
+    margin-top: -15px;
     margin-left: -15%; }
   .header ul, .header ul li {
     display: block;
+    padding-bottom: 5px;
     margin-left: -20px; }
   .header a {
-    padding: 5%;
     font-size: 20px; }
   .main-image div {
     height: 90px;
-    width: 300px;
-    left: 80px; }
+    width: 80%;
+    left: 5%; }
   .meetup {
     height: 250px;
-    width: 100%; }
+    width: 100%;
+    margin-left: -15%; }
+  .meetup-list li {
+    width: 80%;
+    padding: 0; }
   .main-image div h4 {
     display: block;
     margin-left: 30px; }
   .main-image img {
-    min-width: 200px; }
+    margin-top: 40px;
+    width: 80%; }
   .main-image input {
     width: 200px;
     font-size: 9px;
@@ -373,9 +388,9 @@
     top: 200px; }
   .signUp {
     top: 200px;
-    left: 0;
+    left: 2%;
     padding: 20px;
-    width: 450px; }
+    width: 80%; }
   #login-warning {
     top: 180px;
     left: -10px;
