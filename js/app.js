@@ -30,6 +30,14 @@ $(document).ready(function() {
         $('progress').val(totalLength);
     });
 
+    /* create the event page notification */
+
+    $('#createpage').on('click', function() {
+      var login_warning = $('#login-warning');
+      login_warning.addClass('show');
+      setTimeout(function(){ login_warning.removeClass('show');
+        window.location.replace("logIn.html");}, 3000);
+    });
 
     /* Event Page */
 
@@ -224,6 +232,26 @@ $(document).ready(function() {
         return this.optional(element) || email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
         });
 
+        $.validator.addMethod("validaddress", function (address, element) {
+        return this.optional(element) || address.match(/(\d+)/);
+        });
+
+        $.validator.addMethod("validcity", function (city, element) {
+        return this.optional(element) || city.match(/[\w ]+/);
+        });
+
+        $.validator.addMethod("validstate", function (state, element) {
+        return this.optional(element) || state.match(/([A-Z]){2}/);
+        });
+
+        $.validator.addMethod("validcountry", function (country, element) {
+        return this.optional(element) || country.match(/([A-Z]){2}/);
+        });
+
+        $.validator.addMethod("validzip", function (zip, element) {
+        return this.optional(element) || zip.match(/(\d{5}([\-]\d{4})?)/);
+        });
+
         $.validator.addMethod("validdate", function (start_date) {
           start_date = start_date.split('T');
           var time = start_date[1]; 
@@ -265,7 +293,7 @@ $(document).ready(function() {
         });
 
         $.validator.addMethod("pwdlength", function (password, element) {
-        return this.optional(element) || password.length > 9;
+        return this.optional(element) || password.length >= 8;
         });
 
         $.validator.addMethod("pwdnum", function (password, element) {
@@ -326,12 +354,24 @@ $(document).ready(function() {
                         },
                         address: {
                           required: true,
-                          minlength: 6
+                          validaddress: true
                         },
-                        city: "required",
-                        state: "required",
-                        zip: "required",
-                        country: "required",
+                        city: {
+                          required: true,
+                          validcity: true
+                        },
+                        state: {
+                          required: true,
+                          validstate: true
+                        },
+                        zip: {
+                          required: true,
+                          validzip: true
+                        },
+                        country: {
+                          required: true,
+                          validcountry: true
+                        },
                         textArea: {
                           required: true,
                           minlength: 25,
@@ -340,18 +380,18 @@ $(document).ready(function() {
                     },
                     messages: {
                         eventName: {
-                          required: "Please enter the eventName",
+                          required: "Please enter the Name of the event",
                           minlength: "Please enter atleast 3 letters"
                         },
                         eventType: {
-                          required: "Please enter the type of event",
+                          required: "Please enter the type of the event",
                           minlength: "Please enter atleast 3 letters"
                         },hostName: {
-                          required: "Please enter the eventName",
+                          required: "Please enter the Name of the host",
                           minlength: "Please enter atleast 3 letters"
                         },
                         phone: {
-                          required: "Please enter the phone number",
+                          required: "Please enter the phone number in the format of either '(xxx)xxx-xxxx' or '1xxx-xxx-xxx'",
                           phoneUS: "Please enter the valid phone number in the format '(xxx)xxx-xxxx' or '1xxx-xxx-xxx'"
                         },
                         email: {
@@ -363,17 +403,29 @@ $(document).ready(function() {
                           validdate: "please enter the date and time after the current dateTime"
                         },
                         end_date: {
-                          required: "Please enter the start date",
+                          required: "Please enter the end date",
                           validenddate: "please enter the date and time after the one entered in start date and time field"
                         },
                         address: {
-                          required: "Please enter the adress line 1",
-                          minlength: "Please enter atleast 6 letters"
+                          required: "Please enter the address",
+                          validaddress: "Please enter the valid address"
                         },
-                        city: "Please enter the name of the city",
-                        state: "Please enter the state",
-                        zip: "Please enter the zipcode",
-                        country: "Please enter the country name",
+                        city: {
+                          required: "Please enter the city",
+                          validcity: "Please enter the valid city"
+                        },
+                        state: {
+                          required: "Please enter the state",
+                          validstate: "Please enter the valid state"
+                        },
+                        zip: {
+                          required: "Please enter the zip",
+                          validzip: "Please enter the valid zip"
+                        },
+                        country: {
+                          required: "Please enter the country",
+                          validcountry: "Please enter the valid country"
+                        },
                         textArea: {
                           required: "Please enter the description",
                           minlength: "Please enter minimum 25 letters",
@@ -427,7 +479,7 @@ $(document).ready(function() {
                           validemail: "Please enter the valid email ID"
                         },
                         password: {
-                          required: "Please enter the password",
+                          required: "Please enter the password" + '<br>' + "Please enter atleast 8 characters" + '<br>' + "Please enter atleast one number" + '<br>' + "Please enter atleast one letter" + '<br>' + "Please enter atleast one capital letter",
                           pwdlength: "Please enter atleast 8 characters",
                           pwdnum: "Please enter atleast one number",
                           pwdalpha: "Please enter atleast one letter",
@@ -473,7 +525,7 @@ $(document).ready(function() {
                           validemail: "Please enter the valid email ID"
                         },
                         password: {
-                          required: "Please enter the password",
+                          required: "Please enter the password" + '<br>' + "Please enter atleast 8 characters" + '<br>' + "Please enter atleast one number" + '<br>' + "Please enter atleast one letter" + '<br>' + "Please enter atleast one capital letter",
                           pwdlength: "Please enter atleast 8 characters",
                           pwdnum: "Please enter atleast one number",
                           pwdalpha: "Please enter atleast one letter",
