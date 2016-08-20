@@ -24,8 +24,7 @@
     font-size: 22px; }
   .main-image img {
     width: 80%;
-    margin-left: 3%;
-  }
+    margin-left: 3%; }
   .main-image div {
     height: 70px;
     width: 80%;
@@ -69,9 +68,11 @@
     margin-left: 50px;
     margin-top: 50px; }
   .step1 {
-    width: 80%;
-    margin-left: 6%;
+    width: 500px;
+    margin-left: 25%;
     margin-top: 200px; }
+  .step1 input {
+    width: 250px; }
   #textArea {
     width: 250px; }
   #form-create label.error {
@@ -166,8 +167,10 @@
     margin-top: 80px; }
   .step1 {
     width: 400px;
-    margin-left: 8%;
+    margin-left: 10%;
     margin-top: 150px; }
+  .step1 input {
+    width: 250px; }
   #textArea {
     width: 250px; }
   #form-create label.error {
@@ -175,7 +178,7 @@
   .progress-bar {
     top: 100px;
     left: 20px;
-    width: 550px; }
+    width: 400px; }
   .signUp {
     top: 200px;
     left: 20%;
@@ -230,8 +233,7 @@
     font-size: 20px; }
   .main-image img {
     width: 80%;
-    margin-left: 3%;
-  }
+    margin-left: 3%; }
   .main-image div {
     height: 70px;
     width: 80%;
@@ -251,8 +253,7 @@
     font-size: 10px; }
   .meetups {
     margin-left: -7%;
-    padding: 5%;
-  }
+    padding: 5%; }
   .modal {
     width: 80%;
     margin-left: 10%;
@@ -279,9 +280,11 @@
     margin-left: 150px;
     margin-top: 50px; }
   .step1 {
-    width: 80%;
-    margin-left: 5%;
-    margin-top: 200px; }
+    width: 500px;
+    margin-left: 15%;
+    margin-top: 150px; }
+  .step1 input {
+    width: 250px; }
   #textArea {
     width: 250px; }
   #form-create label.error {
@@ -335,11 +338,10 @@
   .meetup {
     height: 250px;
     width: 100%;
-    margin-left: -15%;}
+    margin-left: -15%; }
   .meetup-list li {
     width: 80%;
-    padding: 0;
-  }
+    padding: 0; }
   .main-image div h4 {
     display: block;
     margin-left: 30px; }
@@ -381,15 +383,17 @@
     margin-left: 150px;
     margin-top: 150px; }
   .step1 {
-    width: 300px;
-    margin-left: 8%;
-    margin-top: 250px; }
+    width: 70%;
+    margin-left: 10%;
+    margin-top: 170px; }
+  .step1 input {
+    width: 80%; }
   #textArea {
     width: 250px; }
   #form-create label.error {
     margin-left: 30px; }
   .progress-bar {
-    top: 200px; }
+    top: 150px; }
   .signUp {
     top: 200px;
     left: 2%;
