@@ -1,6 +1,9 @@
 body {
   background-color: #eee;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  height: 100%;
+  margin: 10px;
+  padding: 0; }
 
 .header {
   background-color: #02B3E4;
@@ -112,14 +115,11 @@ progress::-webkit-progress-value {
 .step1 {
   margin-left: 20%;
   margin-top: 200px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   border-radius: 5px;
   width: 700px; }
-
-datalist {
-  display: none; }
 
 .step1:hover {
   box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.5); }
@@ -139,12 +139,12 @@ datalist {
 
 #form-create label.error, #form-login label.error, #form-signup label.error {
   border-left: 5px solid #FB3A3A;
-  color: #ccc;
+  color: #FB3A3A;
   display: inline-block;
   margin: 4px 0 5px 125px;
   padding-left: 20px;
   text-align: left;
-  width: 220px; }
+  width: 270px; }
 
 #form-login label.error, #form-signup label.error {
   margin: 10px 0 5px 50px; }
@@ -254,6 +254,36 @@ section {
   padding-left: 10px;
   font-size: 15px;
   font-weight: normal; }
+
+.error-info ul li {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+
+.error-info {
+    position:relative;
+    right:-15px;
+    width:250px;
+    padding:15px;
+    color: #ccc;
+    background:#F8F8F8;
+    font-size:.875em; 
+}
+.error-info h4 {
+    margin:0 0 10px 0;
+    padding:0;
+    font-weight:normal;
+}
+
+.valid {
+  color:#3a7d34;
+}
+
+.invalid {
+  color:#ec3f41;
+}
+
 
 .footer-signup div {
   margin: 10px 0 0 30px; }
