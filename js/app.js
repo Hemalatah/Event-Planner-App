@@ -222,6 +222,69 @@ $(document).ready(function() {
       return;
     });
 
+    /*password validation */
+
+    var result = false;
+
+    $('input[type=password]').keyup(function() {
+        $('.error-info').show();
+        var password = $(this).val();      
+        if ( password.length < 8 ) {
+            $('#length').removeClass('valid').addClass('invalid');
+            $('#length i').removeClass('fa-thumbs-up').addClass('fa-thumbs-down');
+            result = false;
+        } else {
+            $('#length').removeClass('invalid').addClass('valid');
+            $('#length i').removeClass('fa-thumbs-down').addClass('fa-thumbs-up');
+            result = true;
+        }
+        //validate letter
+        if ( password.match(/[A-z]/) ) {
+            $('#letter').removeClass('invalid').addClass('valid');
+            $('#letter i').removeClass('fa-thumbs-down').addClass('fa-thumbs-up');
+            result = true;
+
+        } else {
+            $('#letter').removeClass('valid').addClass('invalid');
+            $('#letter i').removeClass('fa-thumbs-up').addClass('fa-thumbs-down');
+            result = false;
+        }
+
+        //validate capital letter
+        if ( password.match(/[A-Z]/) ) {
+            $('#capital').removeClass('invalid').addClass('valid');
+            $('#capital i').removeClass('fa-thumbs-down').addClass('fa-thumbs-up');
+            result = true;
+        } else {
+            $('#capital').removeClass('valid').addClass('invalid');
+            $('#capital i').removeClass('fa-thumbs-up').addClass('fa-thumbs-down');
+            result = false;
+        }
+
+        //validate number
+        if (password.match(/\d/) ) {
+            $('#number').removeClass('invalid').addClass('valid');
+            $('#number i').removeClass('fa-thumbs-down').addClass('fa-thumbs-up');
+            result = true;
+        } else {
+            $('#number').removeClass('valid').addClass('invalid');
+            $('#number i').removeClass('fa-thumbs-up').addClass('fa-thumbs-down');
+            result = false;
+        }
+
+    }).focus(function() {
+        $('.error-info').show();
+        $('.error-info').css('color', '#555');
+    });
+
+    function validpwd() {
+        if(result) {
+          var snackbar = $("#snackbar");
+          snackbar.addClass('show');
+          setTimeout(function(){ snackbar.removeClass('show');
+            window.location.replace("userpage.html");}, 3000);
+        }
+    }
 
     /* form validation */
 
@@ -241,7 +304,7 @@ $(document).ready(function() {
         });
 
         $.validator.addMethod("validstate", function (state, element) {
-        return this.optional(element) || state.match(/([A-Z]){2}/);
+        return this.optional(element) || state.match(/([A-Z]){2}/) || state.match(/([a-z]){4}/);
         });
 
         $.validator.addMethod("validcountry", function (country, element) {
@@ -292,22 +355,6 @@ $(document).ready(function() {
           return false;
         });
 
-        $.validator.addMethod("pwdlength", function (password, element) {
-        return this.optional(element) || password.length >= 8;
-        });
-
-        $.validator.addMethod("pwdnum", function (password, element) {
-        return this.optional(element) || password.match(/\d/);
-        });
-
-        $.validator.addMethod("pwdalpha", function (password, element) {
-        return this.optional(element) || password.match(/[a-z]/);
-        });
-
-        $.validator.addMethod("pwdcap", function (password, element) {
-        return this.optional(element) || password.match(/[A-Z]/);
-        });
-
         $.validator.addMethod("phoneUS", function (phone, element) {
         phone = phone.replace(/\s+/g, "");
         return this.optional(element) || phone.length >= 9 && phone.match(/^(\+?1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
@@ -353,8 +400,7 @@ $(document).ready(function() {
                           validenddate: true
                         },
                         address: {
-                          required: true,
-                          validaddress: true
+                          required: true
                         },
                         city: {
                           required: true,
@@ -407,8 +453,7 @@ $(document).ready(function() {
                           validenddate: "please enter the date and time after the one entered in start date and time field"
                         },
                         address: {
-                          required: "Please enter the address",
-                          validaddress: "Please enter the valid address"
+                          required: "Please enter the address"
                         },
                         city: {
                           required: "Please enter the city",
@@ -462,11 +507,7 @@ $(document).ready(function() {
                           validemail: true
                         },
                         password: {
-                          required: true,
-                          pwdlength: true,
-                          pwdnum: true,
-                          pwdalpha: true,
-                          pwdcap: true
+                          required: true
                         }
                     },
                     messages: {
@@ -479,19 +520,11 @@ $(document).ready(function() {
                           validemail: "Please enter the valid email ID"
                         },
                         password: {
-                          required: "Please enter the password" + '<br>' + "Please enter atleast 8 characters" + '<br>' + "Please enter atleast one number" + '<br>' + "Please enter atleast one letter" + '<br>' + "Please enter atleast one capital letter",
-                          pwdlength: "Please enter atleast 8 characters",
-                          pwdnum: "Please enter atleast one number",
-                          pwdalpha: "Please enter atleast one letter",
-                          pwdcap: "Please enter atleast one capital letter"
+                          required: "Please enter the password"
                         }
                     },
                     submitHandler: function() {
-                      var snackbar = $("#snackbar");
-                      snackbar.addClass('show');
-                      setTimeout(function(){ snackbar.removeClass('show');
-                        window.location.replace("userpage.html");}, 3000);
-                      
+                      validpwd();    
                     }
                 });
 
@@ -508,11 +541,7 @@ $(document).ready(function() {
                           validemail: true
                         },
                         password: {
-                          required: true,
-                          pwdlength: true,
-                          pwdnum: true,
-                          pwdalpha: true,
-                          pwdcap: true
+                          required: true
                         }
                     },
                     messages: {
@@ -525,19 +554,11 @@ $(document).ready(function() {
                           validemail: "Please enter the valid email ID"
                         },
                         password: {
-                          required: "Please enter the password" + '<br>' + "Please enter atleast 8 characters" + '<br>' + "Please enter atleast one number" + '<br>' + "Please enter atleast one letter" + '<br>' + "Please enter atleast one capital letter",
-                          pwdlength: "Please enter atleast 8 characters",
-                          pwdnum: "Please enter atleast one number",
-                          pwdalpha: "Please enter atleast one letter",
-                          pwdcap: "Please enter atleast one capital letter"
-
+                          required: "Please enter the password"
                         }
                     },
                     submitHandler: function() {
-                      var snackbar = $("#snackbar");
-                      snackbar.addClass('show');
-                      setTimeout(function(){ snackbar.removeClass('show');
-                        window.location.replace("userpage.html");}, 3000);
+                      validpwd();
                     }
                 });
 
