@@ -256,34 +256,29 @@ section {
   font-weight: normal; }
 
 .error-info ul li {
-  margin:0;
-  padding:0;
-  list-style-type:none;
-}
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
 
 .error-info {
-    position:relative;
-    right:-15px;
-    width:250px;
-    padding:15px;
-    color: #ccc;
-    background:#F8F8F8;
-    font-size:.875em; 
-}
+  position: relative;
+  right: -15px;
+  width: 250px;
+  padding: 15px;
+  color: #ccc;
+  background: #F8F8F8;
+  font-size: .875em; }
+
 .error-info h4 {
-    margin:0 0 10px 0;
-    padding:0;
-    font-weight:normal;
-}
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-weight: normal; }
 
 .valid {
-  color:#3a7d34;
-}
+  color: #3a7d34; }
 
 .invalid {
-  color:#ec3f41;
-}
-
+  color: #ec3f41; }
 
 .footer-signup div {
   margin: 10px 0 0 30px; }
@@ -315,7 +310,6 @@ section {
 
 /* Home Page */
 .main-image img {
-  height: 400px;
   left: 5%;
   width: 90%;
   position: relative;
@@ -334,6 +328,10 @@ section {
 
 .main-image div {
   display: inline-block; }
+
+.clearable {
+  position: relative;
+}
 
 .main-image input {
   width: 250px;
@@ -364,8 +362,8 @@ section {
 
 .meetup {
   height: 250px;
-  width: 300px;
-  margin: 30px;
+  width: 250px;
+  margin: 50px;
   display: inline-block;
   position: relative; }
 
