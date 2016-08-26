@@ -4,9 +4,10 @@
     text-align: center;
     width: 90%;
     margin-left: 2%; }
-  .meetups {
-    width: 80%;
-    padding: 4%; }
+  .meetup {
+   width: 200px;
+   height: 200px;
+   left: -15%; }
   .left li, #right li {
     margin-right: 0;
     padding-right: 9px; }
@@ -37,6 +38,9 @@
     width: 200px;
     font-size: 12px;
     margin-bottom: -10px; }
+  .clearable {
+    left: 25%;
+  }
   .footer ul li {
     display: inline;
     text-align: center;
@@ -110,7 +114,11 @@
     width: 90%;
     margin-left: 2%; }
   .meetup {
-    width: 200px; }
+    width: 200px;
+    height: 200px; }
+  .meetups {
+    left: 10%;
+  }
   .left li, #right li {
     margin-right: 0;
     padding-right: 5px; }
@@ -135,6 +143,9 @@
     font-size: 12px;
     margin-bottom: -10px;
     margin-left: 20%; }
+  .clearable {
+    left: 53%;
+  }
   .footer ul li {
     display: inline;
     text-align: center;
@@ -217,7 +228,8 @@
     width: 90%;
     margin-left: 2%; }
   .meetup {
-    width: 200px; }
+    width: 200px;
+    height: 200px; }
   .left li, #right li {
     margin-right: 0;
     padding-right: 9px; }
@@ -246,6 +258,9 @@
     width: 200px;
     font-size: 12px;
     margin-bottom: -10px; }
+  .clearable {
+    left: 30%;
+  }
   .footer ul li {
     display: inline;
     text-align: center;
@@ -334,10 +349,14 @@
   .main-image div {
     height: 90px;
     width: 80%;
-    left: 5%; }
+    left: 5%;
+    margin-top: 70px; }
+  .main-image img {
+    top: 100px;
+  }
   .meetup {
-    height: 250px;
-    width: 100%;
+    height: 200px;
+    width: 200px;
     margin-left: -15%; }
   .meetup-list li {
     width: 80%;
@@ -350,8 +369,11 @@
     width: 80%; }
   .main-image input {
     width: 200px;
-    font-size: 9px;
+    font-size: 10px;
     margin-bottom: -10px; }
+  .clearable {
+    left: 57%;
+  }
   .footer ul li {
     display: block;
     text-align: center;
