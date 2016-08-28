@@ -1,4 +1,200 @@
 'use strict';
+var eventArray = {'events': [
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Art',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/art1.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Art',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/art2.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Art',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/art3.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Art',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/art4.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Health',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/health1.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Health',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/health2.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Health',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/health3.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Health',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/health4.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Hiking',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/hike1.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Hiking',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/hike2.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Hiking',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/hike3.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Hiking',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/hike4.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Tech',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/tech1.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Tech',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/tech2.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Tech',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/tech3.jpg'
+  },
+  { 'eventName':    'South Bay Art1',
+    'eventType':    'Tech',
+    'hostName':     'Jennifer',
+    'phoneNumber':  '555-555-5555',
+    'eAddress':     'jeniffer@gmail.com',
+    'companyName':  '',
+    'startTime':    '5 Jun 2016 @ 3:30 PM',
+    'endTime':      '5 Jun 2016 @ 5:30 PM',
+    'address':      ['San Pedro Square Market', '87 North street', 'San Jose', 'CA'],
+    'description':  'This is a joint event organized by Founders Floor and Lifograph. Food, beer and wine are provided. You must purchase a ticket to attend',
+    'image':        'images/tech4.jpg'
+  }
+]};
+
+
 (function($) 
     {$('#down-arrow').on('click', function() 
         {$('#drop-down').css('visibility', 'visible');
@@ -320,7 +516,7 @@
         });
 
         $.validator.addMethod('validzip', function (zip, element) {
-            return this.optional(element) || zip.match(/(\d{5}([\-]\d{4})?)/);
+            return this.optional(element) || zip.match(/(^[0-9]{5}(?:-[0-9]{4})?$)/);
         });
 
         $.validator.addMethod('eventtype', function (value, element) {
@@ -354,9 +550,18 @@
             var start_time = start_date[1];
             start_time = start_time.split(':'); 
             start_date = start_date[0].split('-');
-            if (start_date[0] <= end_date[0]) {
-                if(start_date[1] <= end_date[1]) {
-                    if(start_date[2] <= end_date[2]) {
+            if(start_date[0] < end_date[0]) {
+                return true; 
+            }
+            else if(start_date[0] == end_date[0]) {
+                if(start_date[1] < end_date[1]) {
+                    return true;
+                }
+                else if(start_date[1] == end_date[1]){
+                    if(start_date[2] < end_date[2]) {
+                        return true;
+                    }
+                    else if(start_date[2] == end_date[2]) {
                         if(start_time[0] < end_time[0]) {
                             return true;
                         }
@@ -364,19 +569,21 @@
                             if(start_time[1] < end_time[1]) {
                                 return true;
                             }
-                            else {
+                            else if(start_time[1] == end_time[1]) {
                                 return false;
                             }
                         }
                     }
                 }
             }
-            return false;
+            else {
+               return false; 
+            }
         });
 
         $.validator.addMethod('phoneUS', function (phone, element) {
         phone = phone.replace(/\s+/g, '');
-            return this.optional(element) || phone.length >= 9 && phone.match(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/);
+            return this.optional(element) || phone.length >= 9 && phone.match(/^(?:\+?1[-.●]?)?\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/);
         });
 
 
@@ -433,11 +640,6 @@
                         country: {
                           required: true,
                           validcountry: true
-                        },
-                        textArea: {
-                          required: true,
-                          minlength: 25,
-                          maxlength: 100
                         }
                     },
                     messages: {
@@ -486,11 +688,6 @@
                         country: {
                           required: 'Please enter the country',
                           validcountry: 'Please enter the valid country'
-                        },
-                        textArea: {
-                          required: 'Please enter the description',
-                          minlength: 'Please enter minimum 25 letters',
-                          maxlength: 'Please enter maximum 100 letters'
                         }
                     },
                     submitHandler: function() {
