@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>LogIn to the Event</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link rel="stylesheet" media="screen and (max-width: 500px)" href="css/style.css">
+		<link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 700px)" href="style.css">
+		<link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="style.css">
+		<link rel="stylesheet" media="screen and (min-width: 901px) and (max-width: 1100px)" href="style.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+	</head>
+	<body>
+		<section class="header">
+		    <ul class="left">
+		      <li><a href="index.html">Event Planner</a></li>
+		      <li><a href="find.html">Find an Event</a></li>
+		      <li id = "createpage"><a href="#">Create an Event</a></li>
+		    </ul>
+		    <ul id ="right">
+		      <li><a href="logIn.html" style="color: white;">LogIn</a></li>
+		      <li><a href="signUp.html">SignUp</a></li>
+		    </ul>
+		</section>
+		<div id="snackbar">sucessfully logged in!!!</div>
+		<div id="login-warning" class="hide"> Please <i>logIn</i> to create an event!!</div>
+		<form action="#" method="POST" id="form-login" class="signUp" novalidate="novalidate">
+			<h2>Log In</h2>
+			<hr>
+			<h4>Not registered yet?</h4>
+		    <a href="signUp.html">Sign Up</a>
+		    <p>
+			    <label for="username">Username:</label><br>
+	            <input id="username" type="text" name="username" required autocomplete="name" autofocus>	
+		    </p>
+		    <p>
+			    <label for="email">Email Address:</label><br>
+			    <input id="email" type="email" name="email" required autocomplete="email">
+		    </p>
+		    <p>
+			    <label for="password">Password:</label>
+		    	<h5><a href="#">Forgot Password?</a></h5>
+		        <input id="password" type="password" name="password" required autocomplete="new-password">
+		    </p>
+		    <div class="error-info">
+		    	<h4>Password must meet the following requirements:</h4>
+    				<ul>
+    					<li id="length"><i class="fa fa-thumbs-down" aria-hidden="true"> Please enter atleast 8 characters</i></li>
+    					<li id="number"><i class="fa fa-thumbs-down" aria-hidden="true"> Please enter atleast one number</i></li>
+    					<li id="letter"><i class="fa fa-thumbs-down" aria-hidden="true"> Please enter atleast one letter</i></li>
+    					<li id="capital"><i class="fa fa-thumbs-down" aria-hidden="true"> Please enter atleast one capital letter</i></li>
+    				</ul>
+		    </div>
+		    <div class="login-show-error">Invalid username or password.</div><br><br>
+		    <button class="login" type="submit">Log In</button>
+		    <!--<div id="or">OR</div>
+		    <section class="footer-signup">
+				<div class="facebook-icon"><a href="#"><i class="fa fa-facebook"></i></a></div><h4>SignIn with facebook</h4><br>
+				<div class="googleplus-icon"><a href="#"><i class="fa fa-google-plus"></i></a></div><h4>SignIn with google plus</h4>
+		    </section>-->
+		</form>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
