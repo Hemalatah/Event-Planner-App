@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Create the Event</title>
+    	<link rel="stylesheet" href="style.css">
+      <link rel="shortcut icon" href="images/favicon.png">
+      <link rel="stylesheet" media="screen and (max-width: 500px)" href="style.css">
+      <link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 700px)" href="style.css">
+      <link rel="stylesheet" media="screen and (min-width: 701px) and (max-width: 900px)" href="style.css">
+      <link rel="stylesheet" media="screen and (min-width: 901px) and (max-width: 1100px)" href="style.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <!-- latest version of jQuery library -->
+      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    </head>
+    <body>
+        <section class="header">
+            <ul class="left">
+              <li><a href="userpage.html">Event Planner</a></li>
+              <li><a href="userfind.html">Find an Event</a></li>
+              <li><a href="usercreate.html" style="color: white;">Create an Event</a></li>
+              <li id="login-right"><a href="#">Hello Hemalatah<i class="material-icons" id="down-arrow">arrow_drop_down</i></a></li>
+            </ul>
+        </section>
+        <div id="drop-down-box">
+          <div id="arrow"></div>
+          <div id="drop-down"><a href="index.html">Not you? Sign Out</a><hr></div>
+        </div>
+        <div class="progress-bar">
+            <div class="text">Event creation progress:</div>
+            <progress value="0" max="100"></progress>
+        </div>
+
+        <div id="snackbar">Event has been sucessfully created !!!</div>
+        <section class="step1">
+            <form action="#" method="POST" id="form-create" name="form-create" novalidate="novalidate">
+              <h3>Event Information:</h3>            
+              <label for="eventName">Name of the Event:</label>
+              <input type="text" name="eventName" id="eventName" class="8" required autofocus>       
+              <label for="eventType">Type of the Event:
+              <input list="event" id="eventType" name="eventType" class="8" required/></label>
+              <datalist id="event">
+                <option value="Art">
+                <option value="Hiking">
+                <option value="Tech">
+                <option value="Health">
+              </datalist>
+              <h3 class="green">Info about the Event Host:</h3>
+              <label for="hostName">Name:</label>
+                <input type="text" name="hostName" id="hostName" class="8" required autocomplete="name">
+              <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" name="phone" id="phoneNumber" class="8" required autocomplete="tel">
+              <label for="eAddress">Email Address:</label>
+                <input type="email" name="email" id="eAddress" placeholder="name@example.com" class="8" required autocomplete="email">
+              <label for="optional">Company <span>(optional)</span>:</label>
+                <input type="text" name="optional" id="optional" class="0">
+              <h3 class="green">Event Timing:</h3>
+              <label for="startTime">Event start Date and Time:</label>
+                <input type="datetime-local" name="start_date" id="startTime" class="8">
+              <label for="endTime">Event end Date and Time:</label>
+                <input type="datetime-local" name="end_date" id="endTime" class="8">
+              <h3 class="green">Location:</h3>
+              <label for="address1">Address Line 1:</label>
+                <input type="text" name="address" id="address1" class="8" required autocomplete="address-line1">
+              <label for="optional">Line 2 (optional):</label>
+                <input type="text" name="optional" id="optional" class="0" autocomplete="address-line2">
+              <label for="city">City:</label>
+                <input type="text" name="city" id="city" class="8" required autocomplete="address-level2">
+              <label for="state">State/Province:</label>
+                <input type="text" name="state" id="state" class="8" required autocomplete="address-level1">
+              <label for="zip">Zip Code:</label>
+                <input type="text" name="zip" id="zip" class="8" required autocomplete="postal-code">
+              <label for="country">Country:</label>
+                <input type="text" name="country" id="country" class="8" required autocomplete="country">
+              <h3 class="green">Description about the Event:</h3>
+              <textarea name="textArea" id="textArea" rows="10" cols="40" class="4" placeholder="Few words about the Event..."></textarea>
+              <div id="create">
+                <button type="submit" class="submit">Create an Event</button>
+              </div>            
+            </form>
+        </section>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
